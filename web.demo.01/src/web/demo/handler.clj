@@ -11,8 +11,9 @@
 (defn- log-request
   [$request]
   (swap! call-count inc)
-  (println "[ACCESS] " (:request-method $request) (:uri $request) @call-count "回目" (str $request))
-  ;(println (str $request))
+  (println "[ACCESS] " (:request-method $request) (:uri $request) @call-count "time(s)"
+           ;(str $request)
+           )
   nil)
 
 (defroutes app-routes
@@ -33,6 +34,8 @@
   (GET "/cp2" [] (clostache-page-2))
   (GET "/tp" [] (table-page))
   (GET "/mt" [] (main-template))
+  (GET "/sp1" [] (selmer-page-1))
+  (GET "/sp2" [] (selmer-page-2))
   (GET "/video/:id" [id] (println id) (str "id2=" id))
   (GET "/user/:user" [user x] (println user) (str " user=" user " x=" x))
   (route/resources "/")

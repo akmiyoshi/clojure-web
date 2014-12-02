@@ -5,7 +5,9 @@
                  [de.ubercode.clostache/clostache "1.4.0"]
                  [enlive "1.1.5"]
                  [hiccup "1.0.5"]
-                 [ring/ring-defaults "0.1.2"]]
+                 [selmer "0.7.6"]
+                 ;[ring/ring-defaults "0.1.2"]
+                 ]
   :plugins [[lein-ring "0.8.13"]]
   :ring {:handler web.demo.handler/app}
   :profiles

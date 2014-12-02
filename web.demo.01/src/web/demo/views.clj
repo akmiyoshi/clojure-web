@@ -1,7 +1,9 @@
 (ns web.demo.views
   (:require [clostache.parser :as mustache]
             [net.cgrand.enlive-html :as html]
-            [hiccup.page :as page]))
+            [hiccup.page :as page]
+            [selmer.parser :as selmer]
+            ))
 
 (defn clostache-page-1 []
   (mustache/render "<body>
@@ -37,3 +39,12 @@
 (html/deftemplate main-template "templates/application.html"
   []
   [:head :title] (html/content "Enlive starter kit"))
+
+(defn selmer-page-1 []
+  (selmer/render "Hello {{name}}!" {:name "Yogthos"})
+  )
+
+(defn selmer-page-2 []
+  (selmer/render "Hello {{name}}!" {:name "Yogthos"})
+  (selmer/render-file "templates/selmer.html" {:name "John" :records records})
+  )
