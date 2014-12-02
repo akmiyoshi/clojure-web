@@ -5,6 +5,6 @@
 </head>
 <body>
   <p>index.pageです！</p>
-  <img src="neko.jpg" />
+  <img alt="猫" src="neko.jpg" />
 </body>
 </html>
