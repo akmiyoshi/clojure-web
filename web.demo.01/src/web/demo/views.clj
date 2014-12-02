@@ -1,9 +1,10 @@
 (ns web.demo.views
-  (:require [clostache.parser :as mustache]
-            [net.cgrand.enlive-html :as html]
-            [hiccup.page :as page]
-            [selmer.parser :as selmer]
-            ))
+  (:require 
+    [clostache.parser :as mustache]
+    [selmer.parser :as selmer]
+    [net.cgrand.enlive-html :as html]
+    [hiccup.page :as page]
+    ))
 
 (defn clostache-page-1 []
   (mustache/render "<body>
